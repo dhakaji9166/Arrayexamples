@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="array">
+        <input type="text" placeholder="Enter a number">
+        <button id="add"> add to array</button>
+        <select name="" id="">
+            <option value="" selected disabled> select option</option>
+            <option value="asc">asc</option>
+            <option value="desc">desc</option>
+        </select>
+        <button id="output">output</button>
+        <p></p>
+    </div>
+
+
+    <script>
+        const input = document.querySelector("input");
+        const add = document.querySelector("#add");
+        const output = document.querySelector("#output");
+        const select = document.querySelector("select");
+        const para = document.querySelector("p");
+        let number = [];
+
+        add.onclick = () => {
+            number.push(parseInt(input.value));
+            console.log(number);
+        }
+        output.onclick = () => {
+            if (select.value === "asc") {
+                for (let i = 0; i < number.length; i++) {
+                    for (let j = i + 1; j < number.length; j++) {
+                        if (number[i] > number[j]) {
+                            let temp = number[i]
+                            number[i] = number[j]
+                            number[j] = temp
+                        }
+                    }
+                }
+
+            } else if(select.value==="desc") {
+                for (let i = 0; i < number.length; i++) {
+                    for (j = i + 1; j < number.length; j++) {
+                        if (number[i] < number[j]) {
+                            let temp = number[i]
+                            number[i] = number[j]
+                            number[j] = temp
+                        }
+                    }
+                }
+
+            }
+            para.innerHTML = number;
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+let name="lal bahadur shastri";
+let words=name.split('');
+function capitalize(word) {
+    return word.slice(0, 1).toUpperCase() + word.slice(1);
+}
+
+for (let i = 0; i < words.length; i++) {
+    let letters = words[i].split('');
+    letters.splice(0, 1, letters[0].toUpperCase());
+    words[i] = letters.join('');
+}
+console.log(words.join(' '));
+
+    </script>
+</body>
+</html>
